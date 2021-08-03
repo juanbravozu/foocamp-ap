@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$main-font: 'Roboto', sans-serif;
+
+@mixin variable-title() {
+  font-size: 80px;
+  line-height: 90%;
+  letter-spacing: 0.32px;
+}
+
+@mixin heading-1() {
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 56px;
+  text-transform: uppercase;
+}
+
+@mixin heading-2() {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+@mixin hero-body() {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+@mixin body() {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+@mixin eyebrow() {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}

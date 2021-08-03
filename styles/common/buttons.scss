@@ -1,0 +1,20 @@
+.button-primary {
+  @include button-generic();
+  @include normalize-interactable();
+
+  background: $ayp-blue;
+  color: white;
+}
+
+.button-secondary {
+  @include button-generic();
+  @include normalize-interactable();
+
+  background: $ayp-grey-0;
+  color: $ayp-orange;
+}
+
+.inline-button {
+  @include link-generic();
+  @include normalize-interactable();
+}

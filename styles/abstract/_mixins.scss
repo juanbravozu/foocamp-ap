@@ -1,0 +1,24 @@
+@mixin button-generic() {
+  border-radius: 50px;
+  font-family: $main-font;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  padding: 15px 45px;
+  text-transform: uppercase;
+}
+
+@mixin link-generic() {
+  background: none;
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin normalize-interactable() {
+  border: none;
+  color: $ayp-grey-700;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}

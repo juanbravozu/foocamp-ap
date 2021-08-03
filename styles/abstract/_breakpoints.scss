@@ -1,0 +1,29 @@
+$bp-sm: 599px;
+$bp-md: 1023px;
+$bp-lg: 1439px;
+
+/* structure for pixels up to breakpoint i.e: from mobile to up
+
+@media screen and (min-width: $bp-sm) {
+    body {
+        background: $ayp-grey-100;
+    }
+}
+*/
+
+/* structure for pixels down to breakpoint i.e: to mobile to down
+
+@media screen and (max-width: $bp-sm) {
+    body {
+        background: $ayp-grey-800;
+    }
+}
+*/
+
+/* structure for only a dimension: i.e only md
+@media screen and (min-width: $bp-sm) and (max-width: $bp-md) {
+    body {
+        background: $ayp-grey-800;
+    }
+}
+*/
