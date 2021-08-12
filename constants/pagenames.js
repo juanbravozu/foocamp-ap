@@ -1,4 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export const PAGENAMES = {
-  home: 'inicio',
-};
+export const HOME = 'inicio';

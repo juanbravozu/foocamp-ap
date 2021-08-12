@@ -1,8 +1,8 @@
 import getPageData from '../utils/api';
-import { PAGENAMES } from '../utils/constants';
+import { HOME } from '../constants/pagenames';
 
 export const getServerSideProps = async () => {
-  const pageData = await getPageData(PAGENAMES.home);
+  const pageData = await getPageData(HOME);
 
   return {
     props: {
@@ -19,7 +19,7 @@ export default function Recipes({ components }) {
         Index page
       </h1>
       {components.map((component) => (
-        <p key={component.sys.id}>{typeof component.fields.title === 'string' ? component.fields.title : '' }</p>
+        <p key={component.sys.id}>Test</p>
       ))}
     </div>
   );
