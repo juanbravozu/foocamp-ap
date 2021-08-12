@@ -1,7 +1,7 @@
 //typography
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-$main-font: 'Roboto', sans-serif;
+$main-font: 'Roboto', arial, helvetica, sans-serif;
 
 // colors
 $ayp-red: #e73c3e;
@@ -19,6 +19,9 @@ $ayp-grey-30: #d8dada;
 $ayp-grey-70: #747676;
 $ayp-grey-80: #333;
 $ayp-grey-100: #000;
+
+//containers
+$inner-container: 1200px;
 
 //breakpoints
 $bp-xxs: 320px;

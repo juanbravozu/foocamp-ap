@@ -1,12 +1,12 @@
 @mixin button-generic() {
-  border-radius: 50px;
+  border-radius: 999px;
   font-family: $main-font;
   font-size: 14px;
   font-weight: bold;
   line-height: 16px;
   padding: 15px 45px;
   text-transform: uppercase;
-  transition: 0.2s ease all;
+  transition: 0.2s ease background, border, color;
 }
 
 @mixin link-generic() {
@@ -18,14 +18,14 @@
 
 @mixin normalize-interactable() {
   border: none;
-  color: $ayp-grey-700;
+  color: $ayp-grey-70;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
 }
 
 @mixin container {
-  max-width: 1200px;
+  max-width: $inner-container;
   margin: 0 auto;
 }
 
@@ -59,8 +59,8 @@
   }
 
   &.disabled {
-    background: $ayp-grey-300;
-    color: $ayp-grey-700;
+    background: $ayp-grey-30;
+    color: $ayp-grey-70;
     cursor: default;
   }
 }
@@ -71,6 +71,10 @@
 
   &:hover {
     color: $ayp-blue;
-    transition: 0.2s ease all;
+    transition: 0.2s ease background, border, color;
   }
+}
+
+.button-main {
+  @include button-primary();
 }

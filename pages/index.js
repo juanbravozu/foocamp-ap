@@ -1,8 +1,8 @@
 import getPageData from '../utils/api';
+import { PAGENAMES } from '../utils/constants';
 
 export const getServerSideProps = async () => {
-  const HOMESLUG = 'inicio';
-  const pageData = await getPageData(HOMESLUG);
+  const pageData = await getPageData(PAGENAMES.home);
 
   return {
     props: {
