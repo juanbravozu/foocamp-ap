@@ -1,0 +1,80 @@
+@mixin button-generic() {
+  border-radius: 60px;
+  font-family: $main-font;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  padding: 15px 45px;
+  text-transform: uppercase;
+  transition: 0.2s ease background, border, color;
+}
+
+@mixin link-generic() {
+  background: none;
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin normalize-interactable() {
+  border: none;
+  color: $ayp-grey-70;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@mixin container {
+  max-width: $inner-container;
+  margin: 0 auto;
+}
+
+@mixin button-primary {
+  @include button-generic();
+  @include normalize-interactable();
+
+  background: $ayp-blue;
+  color: $ayp-grey-0;
+
+  &:hover {
+    background: $ayp-blue--dark;
+  }
+
+  &.disabled {
+    background: $ayp-blue--light;
+    cursor: default;
+  }
+}
+
+@mixin button-secondary {
+  @include button-generic();
+  @include normalize-interactable();
+
+  background: $ayp-grey-0;
+  color: $ayp-orange;
+
+  &:hover {
+    background: $ayp-orange;
+    color: $ayp-grey-0;
+  }
+
+  &.disabled {
+    background: $ayp-grey-30;
+    color: $ayp-grey-70;
+    cursor: default;
+  }
+}
+
+@mixin inline-button {
+  @include link-generic();
+  @include normalize-interactable();
+
+  &:hover {
+    color: $ayp-blue;
+    transition: 0.2s ease background, border, color;
+  }
+}
+
+.button-main {
+  @include button-primary();
+}
