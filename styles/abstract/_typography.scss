@@ -7,6 +7,7 @@
 @mixin heading-1() {
   font-size: 34px;
   font-weight: 300;
+  line-height: 40px;
   text-transform: uppercase;
 
   @media (min-width: $bp-md) {

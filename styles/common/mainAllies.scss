@@ -1,0 +1,57 @@
+// mainAllies styles and components
+.mainAllies {
+  padding: 54px 0 31px 0;
+  background-color: $ayp-grey-0;
+
+  @media (min-width: $bp-md) {
+    padding: 93px 0 148px 0;
+  }
+
+  .title {
+    @include heading-1();
+
+    color: $ayp-blue;
+    margin-bottom: 31px;
+
+    @media (min-width: $bp-md) {
+      margin-bottom: 58px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 22px;
+    margin-bottom: 30px;
+
+    @media (min-width: $bp-md) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 40px 37px;
+      margin-bottom: 38px;
+    }
+
+    &__card {
+      border: 1px solid $ayp-grey-30;
+      width: 150px;
+      height: 116px;
+
+      @media (min-width: $bp-md) {
+        width: 160px;
+        height: 124px;
+      }
+
+      img {
+        margin: 0 auto;
+        display: block;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .moreAllies {
+    text-align: center;
+  }
+}

@@ -26,6 +26,8 @@
 
 @mixin container {
   padding: 0 30px;
+  max-width: $inner-container;
+  margin: 0 auto;
 
   @media (min-width: $bp-md) {
     max-width: $inner-container;
@@ -96,4 +98,8 @@
 
 .button-main {
   @include button-primary();
+}
+
+.container {
+  @include container();
 }
