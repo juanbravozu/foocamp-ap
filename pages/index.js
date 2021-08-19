@@ -1,35 +1,26 @@
 import getPageData from '../utils/api';
-import BigImageLayout from '../components/layouts/BigImageLayout';
-import LastProjects from '../components/sections/LastProjects';
-import { HOME } from '../constants/pagenames';
-import ImpactMetrics from '../components/ImpactMetrics';
-import { METRICS_SECTION } from '../constants/sectionsId';
+import { HOME } from '../constants/constants';
+import Home from '../components/Home';
 
 export const getServerSideProps = async () => {
-  const pageData = await getPageData(HOME);
+  try {
+    const pageData = await getPageData(HOME);
 
-  return {
-    props: {
-      data: pageData,
-      components: pageData.fields.components,
-    },
-  };
+    return {
+      props: {
+        data: pageData,
+        components: pageData.fields.components,
+      },
+    };
+  } catch (e) {
+    return console.error(e);
+  }
 };
 
-export default function Recipes({ components }) {
-  const projectSection = components.find((component) => component.sys.contentType.sys.id === 'projectsSection');
-
+export default function HomeView({ components }) {
   return (
     <div className="home">
-      <LastProjects
-        data={projectSection.fields}
-      >
-        <BigImageLayout
-          contentType="rich"
-          variation="no-title"
-          data={projectSection.fields}
-        />
-      </LastProjects>
+      <Home components={components} />
     </div>
   );
 }

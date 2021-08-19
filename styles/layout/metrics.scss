@@ -1,12 +1,12 @@
 .metrics {
-  --max-item-width: 500px;
-  --max-container-width: 950px;
+  $max-item-width: 500px;
+  $max-subtitle-width: 200px;
 
   padding: 128px 24px;
   background-color: $ayp-blue;
 
   @media (min-width: $bp-md) {
-    --max-item-width: 350px;
+    $max-item-width: 350px;
   }
 
   &-wrapper {
@@ -14,7 +14,7 @@
   }
 
   &-container {
-    width: min(90%, var(--max-container-width));
+    width: min(90%, 950px);
     margin-left: auto;
 
     @media (min-width: $bp-md) {
@@ -24,14 +24,10 @@
   }
 
   &-item {
-    max-width: var(--max-item-width);
+    max-width: $max-item-width;
     margin: 0 auto;
     margin-top: 52px;
     flex: 1;
-
-    * + * {
-      margin-top: 16px;
-    }
   }
 
   &-title,
@@ -47,13 +43,19 @@
 
   &-subtitle {
     @include heading-2();
+
+    max-width: $max-subtitle-width;
   }
 
   &-value {
     @include variable-title();
+
+    margin-top: 16px;
   }
 
   &-description {
     @include body();
+
+    margin-top: 16px;
   }
 }

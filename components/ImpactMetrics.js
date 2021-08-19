@@ -1,16 +1,18 @@
-export default function ImpactMetrics({ sectionTitle, metrics }) {
-  console.log(metrics);
+import MetricsDataLayout from './layouts/MetricsDataLayout';
+
+export default function ImpactMetrics({ fields: { impactMetricsSet: metrics, title } }) {
   return (
     <section className="metrics">
       <div className="metrics-wrapper">
-        <h2 className="metrics-title">{sectionTitle}</h2>
+        <h2 className="metrics-title">{title}</h2>
         <div className="metrics-container">
-          {metrics.map(({ fields: { title, metric, description } }) => (
-            <div className="metrics-item">
-              <h3 className="metrics-subtitle">{title}</h3>
-              <p className="metrics-value">{metric}</p>
-              <p className="metrics-description">{description}</p>
-            </div>
+          {metrics.map(({ fields: { title: metricsTitle, metric, description }, sys: { id } }) => (
+            <MetricsDataLayout
+              key={id}
+              title={metricsTitle}
+              metric={metric}
+              description={description}
+            />
           ))}
         </div>
       </div>
