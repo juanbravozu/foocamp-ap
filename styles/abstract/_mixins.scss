@@ -25,8 +25,27 @@
 }
 
 @mixin container {
-  max-width: $inner-container;
-  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (min-width: $bp-md) {
+    max-width: $inner-container;
+    margin: 0 auto;
+  }
+}
+
+@mixin columns-desktop {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@mixin container-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin overlap-down {
+  margin-bottom: -80px;
 }
 
 @mixin button-primary {
