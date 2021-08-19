@@ -2,6 +2,8 @@ import getPageData from '../utils/api';
 import BigImageLayout from '../components/layouts/BigImageLayout';
 import LastProjects from '../components/sections/LastProjects';
 import { HOME } from '../constants/pagenames';
+import ImpactMetrics from '../components/ImpactMetrics';
+import { METRICS_SECTION } from '../constants/sectionsId';
 
 export const getServerSideProps = async () => {
   const pageData = await getPageData(HOME);

@@ -1,0 +1,59 @@
+.metrics {
+  --max-item-width: 500px;
+  --max-container-width: 950px;
+
+  padding: 128px 24px;
+  background-color: $ayp-blue;
+
+  @media (min-width: $bp-md) {
+    --max-item-width: 350px;
+  }
+
+  &-wrapper {
+    @include container();
+  }
+
+  &-container {
+    width: min(90%, var(--max-container-width));
+    margin-left: auto;
+
+    @media (min-width: $bp-md) {
+      display: flex;
+      gap: 32px;
+    }
+  }
+
+  &-item {
+    max-width: var(--max-item-width);
+    margin: 0 auto;
+    margin-top: 52px;
+    flex: 1;
+
+    * + * {
+      margin-top: 16px;
+    }
+  }
+
+  &-title,
+  &-subtitle,
+  &-description,
+  &-value {
+    color: $ayp-grey-0;
+  }
+
+  &-title {
+    @include heading-1();
+  }
+
+  &-subtitle {
+    @include heading-2();
+  }
+
+  &-value {
+    @include variable-title();
+  }
+
+  &-description {
+    @include body();
+  }
+}
