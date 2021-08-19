@@ -100,12 +100,6 @@
   }
 }
 
-@mixin absolute-center-horizontal {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .button-main {
   @include button-primary();
 }

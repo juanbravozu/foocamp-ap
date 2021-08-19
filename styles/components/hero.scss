@@ -1,6 +1,9 @@
 .hero {
+  $min-height: 575px;
+  $max-screen-size: 1440px;
+
   position: relative;
-  min-height: 575px;
+  min-height: $min-height;
   mask: url(/svg/hero-mask-mobile.svg);
   mask-repeat: no-repeat;
   mask-size: cover;
@@ -8,8 +11,10 @@
   overflow: hidden;
 
   @media (min-width: $bp-sm) {
-    max-width: 1440px;
-    min-height: 648px;
+    $min-height: 648px;
+
+    min-height: $min-height;
+    max-width: $max-screen-size;
     margin: 0 auto;
     mask: url(/svg/hero-mask.svg);
     mask-repeat: no-repeat;
@@ -18,8 +23,9 @@
   }
 
   &-background {
-    @include absolute-center-horizontal();
-
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     top: 0;
     z-index: -1;
   }
@@ -67,10 +73,10 @@
 
   &-media-wrapper {
     display: none;
-    margin-top: 64px;
 
     @media (min-width: $bp-sm) {
       display: flex;
+      margin-top: 64px;
     }
   }
 
@@ -91,8 +97,9 @@
   }
 
   &-arrow {
-    @include absolute-center-horizontal();
-
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 64px;
 
     @media (min-width: $bp-sm) {
