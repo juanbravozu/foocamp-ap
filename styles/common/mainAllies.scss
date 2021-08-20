@@ -12,9 +12,11 @@
 
     color: $ayp-blue;
     margin-bottom: 31px;
+    max-width: 294px;
 
     @media (min-width: $bp-md) {
       margin-bottom: 58px;
+      max-width: 337px;
     }
   }
 

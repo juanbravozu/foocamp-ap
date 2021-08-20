@@ -16,6 +16,7 @@
     .logo {
       width: 86px;
       height: 86px;
+      cursor: pointer;
 
       @media (min-width: $bp-md) {
         width: 128px;
@@ -59,7 +60,6 @@
 
         li {
           margin: 0;
-          padding: 7px 10px;
           line-height: initial;
           border-bottom: 3px solid transparent;
 
@@ -67,20 +67,26 @@
             display: none;
           }
 
-          a {
+          .navigation__item {
             font-size: 16px;
             font-family: $main-font;
             font-weight: 500;
             text-transform: uppercase;
             color: $ayp-grey-70;
             text-decoration: none;
+            cursor: pointer;
+            padding: 7px 10px;
           }
 
           &:hover,
           &.active {
             border-bottom: 3px solid $ayp-blue--dark;
 
-            a {
+            &:last-of-type {
+              border-bottom: 3px solid transparent;
+            }
+
+            .navigation__item {
               color: $ayp-grey-80;
             }
           }
@@ -97,6 +103,8 @@
       height: 20px;
       position: relative;
       margin-left: auto;
+      border: transparent;
+      background-color: transparent;
       -webkit-transform: rotate(0deg);
       -moz-transform: rotate(0deg);
       -o-transform: rotate(0deg);
@@ -220,7 +228,7 @@
           li {
             padding: 21px 10px;
 
-            a {
+            .navigation__item {
               font-size: 18px;
             }
 

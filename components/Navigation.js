@@ -5,18 +5,13 @@ export default function Navigation({ header }) {
   function handleToggleMenu() {
     setOpenMenu(!openMenu);
   }
-  const logo = header[0].fields.logo.fields.file.url;
-  const nav = header[0].fields.navItems;
-  const support = header[0].fields.navItems[5].fields;
-  const navItem = [];
-  for (let i = 0; i < nav.length - 1; i += 1) {
-    navItem.push(<li key={i}><a href={nav[i].fields.link} className="navigation__item">{nav[i].fields.label}</a></li>);
-  }
+  const logo = header.fields.logo.fields.file.url;
+  const navHeadre = header.fields.navItems;
   return (
     <header className="header">
       <nav className={`navigation container ${openMenu && 'active'}`}>
-        <a href="/" className="logo">
-          <img src={logo} alt="" />
+        <a className="logo" href="/">
+          <img src={logo} alt={header.fields.logo.fields.title} />
         </a>
         <button type="button" className={`navigation__icon ${openMenu && 'open'}`} onClick={handleToggleMenu}>
           <span role="presentation" aria-hidden="true" />
@@ -28,9 +23,14 @@ export default function Navigation({ header }) {
         </button>
         <div className="navigation__list">
           <ul>
-            {navItem}
+            {navHeadre.map((link) => (
+              <li key={link.sys.id}>
+                <a href={link.fields.link} className={link.fields.link === 'apoyanos' ? 'button-main button-header' : 'navigation__item'}>
+                  {link.fields.label}
+                </a>
+              </li>
+            ))}
           </ul>
-          <a href={support.link} className="button-main button-header">{support.label}</a>
         </div>
       </nav>
     </header>

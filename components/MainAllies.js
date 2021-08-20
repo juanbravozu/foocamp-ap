@@ -1,14 +1,6 @@
 export default function MainAllies({ mainAllies }) {
-  const { title } = mainAllies[4].fields;
-  const { allies } = mainAllies[4].fields;
-  const alliesItem = [];
-  allies.map((i) => alliesItem.push(
-    <div key={i} className="grid__card">
-      <a href={allies[i].fields.link} target="_blank" rel="noreferrer">
-        <img src={allies[i].fields.allyLogo.fields.file.url} alt="" />
-      </a>
-    </div>,
-  ));
+  const { title } = mainAllies.fields;
+  const { allies } = mainAllies.fields;
   return (
     <section className="mainAllies">
       <div className="container">
@@ -18,11 +10,24 @@ export default function MainAllies({ mainAllies }) {
           </h3>
         </div>
         <div className="grid">
-          {alliesItem}
+          {allies.map((ally) => (
+            <div key={ally.sys.id} className="grid__card">
+              <a href="link" target="_blank" rel="noreferrer">
+                <img
+                  src={ally ? ally.fields.allyLogo.fields.file.url : null}
+                  alt={ally.fields.allyName}
+                />
+              </a>
+            </div>
+          ))}
         </div>
         <div className="moreAllies">
-          <a href="/">
-            <img src="show-more.png" alt="" />
+          <a href="link">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="43" height="43" rx="21.5" fill="white" />
+              <path d="M28.75 18L31 20.2418L22 29L13 20.2418L15.25 18L22 24.6L28.75 18Z" fill="#00A5DF" />
+              <rect x="0.5" y="0.5" width="43" height="43" rx="21.5" stroke="#9DD7EC" />
+            </svg>
           </a>
         </div>
       </div>
