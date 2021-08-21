@@ -5,13 +5,12 @@ export default function Navigation({ header }) {
   function handleToggleMenu() {
     setOpenMenu(!openMenu);
   }
-  const logo = header.fields.logo.fields.file.url;
-  const navHeadre = header.fields.navItems;
+  const { logo: { fields: logo }, navItems: navHeadre } = header;
   return (
     <header className="header">
       <nav className={`navigation container ${openMenu && 'active'}`}>
         <a className="logo" href="/">
-          <img src={logo} alt={header.fields.logo.fields.title} />
+          <img src={logo.file.url} alt={logo.title} />
         </a>
         <button type="button" className={`navigation__icon ${openMenu && 'open'}`} onClick={handleToggleMenu}>
           <span role="presentation" aria-hidden="true" />

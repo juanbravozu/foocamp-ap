@@ -1,6 +1,5 @@
 export default function MainAllies({ mainAllies }) {
-  const { title } = mainAllies.fields;
-  const { allies } = mainAllies.fields;
+  const { title, allies } = mainAllies;
   return (
     <section className="mainAllies">
       <div className="container">

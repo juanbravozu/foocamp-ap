@@ -1,24 +1,26 @@
 export default function Footer({ footer }) {
-  const logo = footer.fields.logo.fields.file.url;
-  const navFotter = footer.fields.footerNavLinks;
-  const copy = footer.fields.closedCaption;
-  const { title } = footer.fields;
-  const description = footer.fields.companyDescription;
-  const phone = footer.fields.contactNumber;
-  const iconsFooter = footer.fields.socialNetworksSection;
+  const {
+    logo: { fields: logo },
+    footerNavLinks: navFooter,
+    closedCaption: copy,
+    title,
+    companyDescription: description,
+    contactNumber: phone,
+    socialNetworksSection: iconsFooter,
+  } = footer;
   const contactLabel = 'Contáctanos';
   return (
     <footer className="footer">
       <div className="container footer-nav">
         <div className="footer-nav__logo">
           <a href="/">
-            <img src={logo} alt={footer.fields.logo.fields.title} />
+            <img src={logo.file.url} alt={logo.title} />
           </a>
         </div>
         <div className="footer-nav__list">
           <nav>
             <ul>
-              {navFotter.map((link) => (
+              {navFooter.map((link) => (
                 <li key={link.sys.id}>
                   <a href={link.fields.link} className="navigation__item">
                     {link.fields.label}
