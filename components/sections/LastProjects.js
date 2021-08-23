@@ -1,23 +1,33 @@
 import ProjectIcon from '../ProjectIcon';
 
-export default function LastProjects({ children, title, categories }) {
+export default function LastProjects({ children, data }) {
+  const layoutData = {
+    title: data?.title,
+    categories: data?.categoriesList,
+  };
+
   return (
     <article className="last-projects">
       <div className="last-projects__heading">
-        <h2 className="last-projects__title">{title}</h2>
+        <h2 className="last-projects__title">
+          { layoutData.title }
+        </h2>
         <div className="last-projects__categories">
-          {categories.map((category) => (
+          { layoutData.categories.map(({
+            sys: { id },
+            fields: { title, icon },
+          }) => (
             <ProjectIcon
-              key={category.sys.id}
+              key={id}
               url="#"
-              text={category.fields.title}
-              icon={category.fields.icon}
+              text={title}
+              icon={icon}
               variation="white"
             />
-          ))}
+          )) }
         </div>
       </div>
-      {children}
+      { children }
     </article>
   );
 }

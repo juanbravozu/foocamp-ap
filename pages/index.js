@@ -20,21 +20,12 @@ export default function Recipes({ components }) {
   return (
     <div className="home">
       <LastProjects
-        title={projectSection.fields.title}
-        categories={projectSection.fields.categoriesList}
+        data={projectSection.fields}
       >
         <BigImageLayout
           contentType="rich"
-          content={projectSection.fields.projectTitle}
-          image={{
-            url: projectSection.fields.sectionImage.fields.file.url,
-            title: projectSection.fields.sectionImage.fields.title,
-          }}
-          variation="none"
-          cta={{
-            url: projectSection.fields.cta.fields.link,
-            label: projectSection.fields.cta.fields.label,
-          }}
+          variation="no-title"
+          data={projectSection.fields}
         />
       </LastProjects>
     </div>

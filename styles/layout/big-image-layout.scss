@@ -73,4 +73,10 @@
       margin-bottom: 50px;
     }
   }
+
+  &--no-title {
+    .big-image-layout__content > h2 {
+      display: none;
+    }
+  }
 }

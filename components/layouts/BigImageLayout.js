@@ -1,17 +1,28 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
 
-export default function BigImageLayout({
-  title, contentType, content, image, variation, cta,
-}) {
+export default function BigImageLayout({ contentType, data, variation }) {
   function getContent(innerContent, innerContentType) {
     if (innerContentType === 'rich') {
       return documentToReactComponents(innerContent);
     } if (innerContentType === 'simple') {
-      return <p>{innerContent}</p>;
+      return <p>{ innerContent }</p>;
     }
     return '';
   }
+
+  const layoutData = {
+    title: data?.title,
+    content: data?.projectTitle,
+    cta: {
+      url: data?.cta.fields.link,
+      label: data?.cta.fields.label,
+    },
+    image: {
+      url: data?.sectionImage.fields.file.url,
+      title: data?.sectionImage.fields.title,
+    },
+  };
 
   return (
     <div
@@ -22,25 +33,30 @@ export default function BigImageLayout({
       }
     >
       <div className="big-image-layout__content">
-        { title
-          ? <h2>{ title }</h2> : null }
-        { getContent(content, contentType) }
-        { cta
-          ? (
-            <Link href={`/${cta.url}`}>
+        { layoutData.title && <h2>{ layoutData.title }</h2> }
+        { layoutData.content
+          && getContent(layoutData.content, contentType) }
+        { layoutData.cta
+          && (
+            <Link href={`/${layoutData.cta.url}`}>
               <span className="big-image-layout__button">
-                { cta.label }
+                { layoutData.cta.label }
               </span>
             </Link>
-          ) : null}
+          ) }
       </div>
       <div
         className="big-image-layout__image"
         role="presentation"
         aria-hidden="true"
       >
-        { image
-          ? <img src={`https://${image.url}`} alt={image.title} /> : null }
+        { layoutData.image
+          && (
+          <img
+            src={`https://${layoutData.image.url}`}
+            alt={layoutData.image.title}
+          />
+          )}
       </div>
     </div>
   );
