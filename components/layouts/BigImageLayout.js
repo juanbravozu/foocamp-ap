@@ -1,5 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
+import { getVariation } from '../../utils/global-functions';
 
 export default function BigImageLayout({ contentType, data, variation }) {
   function getContent(innerContent, innerContentType) {
@@ -25,13 +26,7 @@ export default function BigImageLayout({ contentType, data, variation }) {
   };
 
   return (
-    <div
-      className={
-        (variation !== 'none')
-          ? `big-image-layout big-image-layout--${variation}`
-          : 'big-image-layout'
-      }
-    >
+    <div className={getVariation('big-image-layout', variation)}>
       <div className="big-image-layout__content">
         { layoutData.title && <h2>{ layoutData.title }</h2> }
         { layoutData.content

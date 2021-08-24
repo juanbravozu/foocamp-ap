@@ -22,7 +22,7 @@ export default function LastProjects({ children, data }) {
               url="#"
               text={title}
               icon={icon}
-              variation="white"
+              variation="none"
             />
           )) }
         </div>

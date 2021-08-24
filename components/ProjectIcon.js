@@ -1,16 +1,12 @@
 import Link from 'next/link';
+import { getVariation } from '../utils/global-functions';
 
 export default function ProjectIcon({
   icon, url, text, variation,
 }) {
   return (
     <Link href={url}>
-      <div className={
-          (variation !== 'none')
-            ? `project-icon project-icon--${variation}`
-            : 'project-icon'
-        }
-      >
+      <div className={getVariation('project-icon', variation)}>
         { icon
           ? (
             <div className="placeholder-image">
