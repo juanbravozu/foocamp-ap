@@ -7,12 +7,14 @@ export default function ProjectIcon({
   return (
     <Link href={url}>
       <div className={getVariation('project-icon', variation)}>
-        { icon
-          ? (
-            <div className="placeholder-image">
-              <img src={`https://${icon.fields.file.url}`} alt={icon.fields.title} />
-            </div>
-          ) : null }
+        { icon && (
+          <div className="placeholder-image">
+            <img
+              src={`https://${icon.fields.file.url}`}
+              alt={icon.fields.title}
+            />
+          </div>
+        ) }
         <span className="project-icon__body">
           {text}
         </span>
