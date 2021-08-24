@@ -1,1 +1,82 @@
-// layout of two-columns icons
+.big-image-layout {
+  @include container();
+  @include container-flex-column();
+
+  @media (min-width: $bp-sm) {
+    @include columns-desktop();
+  }
+
+  &__button {
+    @include button-primary();
+
+    display: block;
+    text-align: center;
+
+    @media (min-width: $bp-sm) {
+      display: inline;
+    }
+  }
+
+  &__image {
+    @media (min-width: $bp-sm) {
+      grid-column: 7 / 12;
+    }
+
+    img {
+      height: 480px;
+      width: 100%;
+      object-fit: cover;
+
+      @media (min-width: $bp-sm) {
+        height: 730px;
+      }
+    }
+  }
+
+  &--blue-background {
+    p,
+    h2 {
+      color: white;
+    }
+
+    h2 {
+      margin-top: 200px;
+    }
+
+    .big-image-layout__button {
+      @include button-secondary();
+    }
+  }
+
+  &__content {
+    margin-bottom: 50px;
+
+    @media (min-width: $bp-sm) {
+      margin-bottom: 0;
+      grid-column: 1 / 7;
+    }
+
+    p {
+      @include body();
+
+      margin-bottom: 50px;
+      max-width: 480px;
+    }
+
+    li p {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      @include heading-1();
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &--no-title {
+    .big-image-layout__content > h2 {
+      display: none;
+    }
+  }
+}
