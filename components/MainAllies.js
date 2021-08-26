@@ -16,7 +16,7 @@ export default function MainAllies({ mainAllies }) {
               <Link passHref href="/">
                 <a href="/" target="_blank" rel="noreferrer">
                   <img
-                    src={ally ? ally.fields.allyLogo.fields.file.url : null}
+                    src={ally ? ally.fields.allyLogo.fields.file.url : ''}
                     alt={ally.fields.allyName}
                   />
                 </a>
