@@ -1,0 +1,21 @@
+.join-us {
+  background: $ayp-blue;
+
+  .big-image-layout__image {
+    margin-bottom: 100px;
+
+    @media (min-width: $bp-sm) {
+      @include overlap-up;
+
+      margin-bottom: 0;
+    }
+  }
+
+  .big-image-layout__content h2 {
+    margin-bottom: 30px;
+
+    @media (min-width: $bp-md) {
+      margin-bottom: 50px;
+    }
+  }
+}

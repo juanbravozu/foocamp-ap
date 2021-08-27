@@ -14,7 +14,9 @@ export default function BigImageLayout({ contentType, data, variation }) {
 
   const layoutData = {
     title: data?.title,
-    content: data?.projectTitle,
+    content:
+      data?.projectTitle
+      || data?.description,
     cta: {
       url: data?.cta.fields.link,
       label: data?.cta.fields.label,

@@ -50,6 +50,10 @@
   margin-bottom: -80px;
 }
 
+@mixin overlap-up {
+  transform: translateY(-80px);
+}
+
 @mixin button-primary {
   @include button-generic();
   @include normalize-interactable();
@@ -71,12 +75,12 @@
   @include button-generic();
   @include normalize-interactable();
 
-  background: $ayp-grey-0;
-  color: $ayp-orange;
+  background: $ayp-orange;
+  color: $ayp-grey-0;
 
   &:hover {
-    background: $ayp-orange;
-    color: $ayp-grey-0;
+    background: $ayp-grey-0;
+    color: $ayp-orange;
   }
 
   &.disabled {

@@ -23,7 +23,6 @@
     }
 
     img {
-      height: 480px;
       width: 100%;
       object-fit: cover;
 
@@ -40,7 +39,11 @@
     }
 
     h2 {
-      margin-top: 200px;
+      margin-top: 90px;
+
+      @media (min-width: $bp-sm) {
+        margin-top: 200px;
+      }
     }
 
     .big-image-layout__button {
