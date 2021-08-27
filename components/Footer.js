@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { contactLabel } from '../constants/pagenames';
+import { CONTACT_LABEL } from '../constants/constants';
 
-export default function Footer({ footer }) {
+export default function Footer({ fields }) {
   const {
     logo: { fields: logo },
     footerNavLinks: navFooter,
@@ -10,7 +10,7 @@ export default function Footer({ footer }) {
     companyDescription: description,
     contactNumber: phone,
     socialNetworksSection: iconsFooter,
-  } = footer;
+  } = fields;
   return (
     <footer className="footer">
       <div className="container footer-nav">
@@ -44,7 +44,7 @@ export default function Footer({ footer }) {
             {description}
           </p>
           <p className="title">
-            {contactLabel}
+            {CONTACT_LABEL}
           </p>
           <div className="links">
             <Link passHref href={iconsFooter[3].fields.link}>

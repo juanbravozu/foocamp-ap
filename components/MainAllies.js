@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-export default function MainAllies({ mainAllies }) {
-  const { title, allies } = mainAllies;
+export default function MainAllies({ fields }) {
+  const { title, allies } = fields;
   return (
     <section className="mainAllies">
       <div className="container">

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function Navigation({ header }) {
+export default function Navigation({ fields }) {
   const [openMenu, setOpenMenu] = useState(false);
   function handleToggleMenu() {
     setOpenMenu(!openMenu);
   }
-  const { logo: { fields: logo }, navItems: navHeadre } = header;
+  const { logo: { fields: logo }, navItems: navHeadre } = fields;
   const navigationType = (link) => (link === 'apoyanos' ? 'button-main button-header' : 'navigation__item');
   return (
     <header className="header">
