@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CONTACT_LABEL } from '../constants/constants';
+import { CONTACT_LABEL } from '../../constants/constants';
 
 export default function Footer({ fields }) {
   const {

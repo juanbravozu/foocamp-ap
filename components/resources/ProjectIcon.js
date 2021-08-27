@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getVariation } from '../utils/global-functions';
+import { getVariation } from '../../utils/global-functions';
 
 export default function ProjectIcon({
   icon, url, text, variation,

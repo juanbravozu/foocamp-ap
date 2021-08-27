@@ -1,9 +1,10 @@
-import ProjectIcon from '../ProjectIcon';
+import BigImageLayout from '../resources/BigImageLayout';
+import ProjectIcon from '../resources/ProjectIcon';
 
-export default function LastProjectsContent({ children, data }) {
+export default function LastProjects({ fields }) {
   const layoutData = {
-    title: data?.title,
-    categories: data?.categoriesList,
+    title: fields?.title,
+    categories: fields?.categoriesList,
   };
 
   return (
@@ -27,7 +28,11 @@ export default function LastProjectsContent({ children, data }) {
           )) }
         </div>
       </div>
-      { children }
+      <BigImageLayout
+        contentType="rich"
+        variation="no-title"
+        data={fields}
+      />
     </article>
   );
 }

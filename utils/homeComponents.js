@@ -1,8 +1,8 @@
-import Footer from '../components/Footer';
-import ImpactMetrics from '../components/ImpactMetrics';
-import MainAllies from '../components/MainAllies';
-import Navigation from '../components/Navigation';
-import LastProjects from '../components/sections/LastProjects';
+import Footer from '../components/app/Footer';
+import ImpactMetrics from '../components/home/ImpactMetrics';
+import MainAllies from '../components/home/MainAllies';
+import Navigation from '../components/app/Navigation';
+import LastProjects from '../components/home/LastProjects';
 import {
   PROJECTS_SECTION, METRICS_SECTION, NAVBAR, FOOTER, ALLIES_SECTION,
 } from '../constants/constants';
