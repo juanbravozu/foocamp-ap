@@ -1,5 +1,5 @@
 import React from 'react';
-import homeComponents from '../../utils/homeComponents';
+import homeComponents from '../../utils/home-components';
 
 export default function Home({ components }) {
   return (

@@ -6,3 +6,4 @@ export const PROJECTS_SECTION = 'projectsSection';
 export const METRICS_SECTION = 'impactMetricsHomeSection';
 export const ALLIES_SECTION = 'alliesHomeSection';
 export const CONTACT_LABEL = 'Contáctanos';
+export const HERO_SECTION = 'hero';
