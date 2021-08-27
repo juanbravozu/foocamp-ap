@@ -1,9 +1,6 @@
 import getPageData from '../utils/api';
 import { HOME } from '../constants/constants';
 import Home from '../components/Home';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import MainAllies from '../components/MainAllies';
 
 export const getServerSideProps = async () => {
   try {
@@ -24,9 +21,6 @@ export default function HomeView({ components }) {
   return (
     <div className="home">
       <Home components={components} />
-      <Navigation header={components} />
-      <MainAllies mainAllies={components} />
-      <Footer footer={components} />
     </div>
   );
 }
