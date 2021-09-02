@@ -1,5 +1,5 @@
-import BigImageLayout from '../resources/BigImageLayout';
-import ProjectIcon from '../resources/ProjectIcon';
+import BigImageLayout from './BigImageLayout';
+import ProjectIcon from './ProjectIcon';
 
 export default function LastProjects({ fields }) {
   const layoutData = {

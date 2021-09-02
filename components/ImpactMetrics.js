@@ -1,4 +1,4 @@
-import MetricsDataLayout from '../resources/MetricsDataLayout';
+import MetricsDataLayout from './MetricsDataLayout';
 
 export default function ImpactMetrics({ fields: { impactMetricsSet: metrics, title } }) {
   return (

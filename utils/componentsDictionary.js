@@ -1,9 +1,9 @@
-import Footer from '../components/app/Footer';
-import ImpactMetrics from '../components/home/ImpactMetrics';
-import MainAllies from '../components/home/MainAllies';
-import Navigation from '../components/app/Navigation';
-import LastProjects from '../components/home/LastProjects';
-import JoinUs from '../components/app/JoinUs';
+import Footer from '../components/Footer';
+import ImpactMetrics from '../components/ImpactMetrics';
+import MainAllies from '../components/MainAllies';
+import Navigation from '../components/Navigation';
+import LastProjects from '../components/LastProjects';
+import JoinUs from '../components/JoinUs';
 import Hero from '../components/Hero';
 import {
   PROJECTS_SECTION,
@@ -13,7 +13,7 @@ import {
   ALLIES_SECTION,
   JOINUS_SECTION,
   HERO_SECTION,
-} from '../constants/constants';
+} from './constants';
 
 const homeComponents = {
   [NAVBAR]: Navigation,

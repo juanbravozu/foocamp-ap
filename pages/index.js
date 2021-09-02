@@ -1,6 +1,6 @@
 import getPageData from '../utils/api';
-import { HOME } from '../constants/constants';
-import Home from '../components/app/Home';
+import { HOME } from '../utils/constants';
+import Home from '../components/Home';
 
 export const getServerSideProps = async () => {
   try {

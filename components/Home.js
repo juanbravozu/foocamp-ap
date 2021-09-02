@@ -1,13 +1,14 @@
-import { Fragment } from 'react';
-import Hero from './Hero';
-import { HERO_SECTION } from '../constants/constants';
+import React from 'react';
+import dictionary from '../utils/componentsDictionary';
 
 export default function Home({ components }) {
   return (
     <>
-      {components.map(({ fields, sys: { id, contentType } }) => (
-        (!!(contentType.sys.id === HERO_SECTION) && <Hero key={id} fields={fields} />)
-      ))}
+      {components.map(({ fields, sys: { id, contentType: { sys: { id: sectionType } } } }) => {
+        const Component = dictionary[sectionType];
+        if (!Component) return null;
+        return <Component key={id} fields={fields} />;
+      })}
     </>
   );
 }

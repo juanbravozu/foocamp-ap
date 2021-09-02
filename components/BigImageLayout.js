@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
-import { getVariation } from '../../utils/global-functions';
+import { getVariation } from '../utils/global-functions';
 
 export default function BigImageLayout({ contentType, data, variation }) {
   function getContent(innerContent, innerContentType) {

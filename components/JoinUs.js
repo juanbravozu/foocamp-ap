@@ -1,4 +1,4 @@
-import BigImageLayout from '../resources/BigImageLayout';
+import BigImageLayout from './BigImageLayout';
 
 export default function JoinUs({ fields }) {
   return (
