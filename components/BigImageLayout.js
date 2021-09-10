@@ -16,14 +16,15 @@ export default function BigImageLayout({ contentType, data, variation }) {
     title: data?.title,
     content:
       data?.projectTitle
-      || data?.description,
+      || data?.description
+      || data?.content,
     cta: {
-      url: data?.cta.fields.link,
-      label: data?.cta.fields.label,
+      url: data?.link,
+      label: data?.label,
     },
     image: {
-      url: data?.sectionImage.fields.file.url,
-      title: data?.sectionImage.fields.title,
+      url: data?.url,
+      title: data?.imgTitle,
     },
   };
 

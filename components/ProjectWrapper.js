@@ -1,16 +1,38 @@
 import Link from 'next/link';
+import Chip from './Chip';
 
-export default function ProjectWrapper({ children }) {
-  // Must draw the list of links selecting the current by the prop category id
+export default function ProjectWrapper({
+  children,
+  currCategory,
+  categories: { category: categories },
+}) {
   return (
     <>
-      <ul className="categories">
-        <li><Link key="1" href="/proyectos">Todos los proyectos</Link></li>
-        <li><Link key="2" href="/proyectos/deporte">Deportes</Link></li>
-        <li><Link key="3" href="/proyectos/arte-y-cultura">Arte y cultura</Link></li>
-      </ul>
+      <div className="categories__wrapper">
+        <ul className="categories">
+          {categories.map(({
+            fields: {
+              label,
+              link,
+            },
+          }) => (
+            <Link
+              key={link}
+              href={`/proyectos/${link}`}
+              passHref
+              shallow
+            >
+              <Chip
+                Component="a"
+                highlight={link === currCategory}
+              >
+                {label.charAt(0).toUpperCase() + label.slice(1)}
+              </Chip>
+            </Link>
+          ))}
+        </ul>
+      </div>
       {children}
-      <div>1,2,,4, </div>
     </>
   );
 }

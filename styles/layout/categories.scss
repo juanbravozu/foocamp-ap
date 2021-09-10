@@ -1,0 +1,33 @@
+.categories {
+  display: flex;
+  width: fit-content;
+  padding-right: 30px;
+
+  .chip {
+    margin: 0 8px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__wrapper {
+    @include container();
+
+    width: 100%;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+
+  @media (min-width: $bp-sm) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .chip {
+      margin-bottom: 16px;
+    }
+  }
+}

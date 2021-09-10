@@ -1,12 +1,35 @@
-import Link from 'next/link';
+import BigImageLayout from './BigImageLayout';
 
-export default function Project({ number }) {
+export default function Project({
+  fields: {
+    projectBrief,
+    projectTitle,
+    slug,
+    projectImage: {
+      fields: {
+        title: imgTitle,
+        file: {
+          url,
+        },
+      },
+    },
+  },
+  variation,
+}) {
   return (
-    <>
-      Project
-      {' '}
-      {number}
-      <Link href="/projects/detail/12033"> Mas info</Link>
-    </>
+    <article className="project">
+      <BigImageLayout
+        contentType="simple"
+        data={{
+          title: projectTitle,
+          content: projectBrief,
+          link: slug,
+          label: 'Más información',
+          url,
+          imgTitle,
+        }}
+        variation={variation}
+      />
+    </article>
   );
 }
