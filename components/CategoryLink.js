@@ -1,6 +1,6 @@
 import { getVariation } from '../utils/global-functions';
 
-export default function Chip({
+export default function CategoryLink({
   Component = 'div',
   children,
   highlight = false,
@@ -8,7 +8,7 @@ export default function Chip({
 }) {
   return (
     <Component
-      className={getVariation('chip', highlight ? 'highlighted' : 'none')}
+      className={getVariation('category-link', highlight ? 'highlighted' : 'none')}
       {...props}
     >
       {children}

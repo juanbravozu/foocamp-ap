@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Chip from './Chip';
+import CategoryLink from './CategoryLink';
 
 export default function ProjectWrapper({
   children,
   currCategory,
-  categories: { category: categories },
+  categories: { category: categories = [] } = {},
 }) {
   return (
     <>
@@ -22,12 +22,12 @@ export default function ProjectWrapper({
               passHref
               shallow
             >
-              <Chip
+              <CategoryLink
                 Component="a"
                 highlight={link === currCategory}
               >
-                {label.charAt(0).toUpperCase() + label.slice(1)}
-              </Chip>
+                {label}
+              </CategoryLink>
             </Link>
           ))}
         </ul>

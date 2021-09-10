@@ -23,11 +23,7 @@ export const getServerSideProps = async () => {
 export default function ProjectsPage({ components }) {
   const { query } = useRouter();
   const { categoryId } = query;
-  const [,,,, { fields: joinUs }] = components;
-  // from components extract the requiered info
-  // const [, , , parentProjects] = components;
-  // const { fields: { categories } } = parentProjects;
-  const [, , { fields: categories }, { fields: projects }] = components;
+  const [, , { fields: categories }, { fields: projects }, { fields: joinUs }] = components;
 
   useEffect(() => {
     // Fetch projects based on category filter
