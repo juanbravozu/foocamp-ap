@@ -1,4 +1,4 @@
-.chip {
+.category-link {
   @include eyebrow();
 
   display: inline-block;
@@ -8,6 +8,7 @@
   border: 2px solid $ayp-grey-30;
   border-radius: 2rem;
   text-decoration: none;
+  text-transform: capitalize;
   font-family: $main-font;
   white-space: nowrap;
   transition: none 0.3s ease-in-out;
