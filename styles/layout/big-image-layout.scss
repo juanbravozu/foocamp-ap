@@ -106,4 +106,17 @@
       }
     }
   }
+
+  &--project {
+    flex-direction: column-reverse;
+
+    .big-image-layout__image img {
+      margin-bottom: 24px;
+
+      @media (min-width: $bp-sm) {
+        height: 530px;
+        margin-bottom: 0;
+      }
+    }
+  }
 }

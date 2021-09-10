@@ -1,0 +1,25 @@
+.chip {
+  @include eyebrow();
+
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: $ayp-grey-10;
+  color: $ayp-grey-70;
+  border: 2px solid $ayp-grey-30;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-family: $main-font;
+  white-space: nowrap;
+  transition: none 0.3s ease-in-out;
+  transition-property: color, background-color, border-color;
+
+  &:hover {
+    background-color: $ayp-grey-0;
+  }
+
+  &--highlighted {
+    border-color: $ayp-blue;
+    color: $ayp-blue--dark;
+    background-color: $ayp-grey-0;
+  }
+}

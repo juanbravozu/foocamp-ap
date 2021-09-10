@@ -1,8 +1,11 @@
 // layout
 @import './layout/big-image-layout';
 @import './layout/metrics';
+@import './layout/categories';
+@import './layout/projects';
 
 // components
 @import './components/last-projects.scss';
 @import './components/join-us';
 @import './components/hero.scss';
+@import './components/chip';
