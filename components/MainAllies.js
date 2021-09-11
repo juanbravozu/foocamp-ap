@@ -11,7 +11,7 @@ export default function MainAllies({ fields }) {
           </h3>
         </div>
         <div className="grid">
-          {allies.map((ally) => (
+          {allies.slice(0, 18).map((ally) => (
             <div key={ally.sys.id} className="grid__card">
               <Link passHref href="/">
                 <a href="/" target="_blank" rel="noreferrer">

@@ -2,6 +2,10 @@
 .footer {
   padding: 44px 0;
 
+  @media (min-width: $bp-md) {
+    padding: 92px 0 44px 0;
+  }
+
   .footer-nav {
     display: flex;
     flex-wrap: wrap;
@@ -107,6 +111,11 @@
         color: $ayp-black;
         text-decoration: none;
         line-height: 24px;
+        max-width: 220px;
+
+        @media (min-width: $bp-md) {
+          max-width: 100%;
+        }
       }
 
       .paragraph {

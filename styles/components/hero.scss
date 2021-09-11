@@ -15,7 +15,7 @@
 
     min-height: $min-height;
     max-width: $max-screen-size;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     mask: url(/svg/hero-mask.svg);
     mask-repeat: no-repeat;
     mask-size: cover;
@@ -82,6 +82,7 @@
 
   &-media {
     margin-left: 24px;
+    filter: invert(1);
   }
 
   &-line {
