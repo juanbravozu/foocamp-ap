@@ -30,7 +30,7 @@ export default function BigImageLayout({ contentType, data, variation }) {
   return (
     <div className={getVariation('big-image-layout', variation)}>
       <div className="big-image-layout__content">
-        { layoutData.title && <h2>{ layoutData.title }</h2> }
+        { layoutData.title && <h2 className="big-image-layout__title">{ layoutData.title }</h2> }
         { layoutData.content
           && getContent(layoutData.content, contentType) }
         { layoutData.cta

@@ -6,6 +6,14 @@
     @include columns-desktop();
   }
 
+  &__title {
+    @include heading-1();
+
+    color: $ayp-blue;
+    margin-bottom: 30px;
+    max-width: 330px;
+  }
+
   &__button {
     @include button-primary();
 
@@ -80,6 +88,22 @@
   &--no-title {
     .big-image-layout__content > h2 {
       display: none;
+    }
+  }
+
+  &--reverse {
+    .big-image-layout__image {
+      @media (min-width: $bp-sm) {
+        grid-column: 1 / 6;
+        grid-row: 1;
+      }
+    }
+
+    .big-image-layout__content {
+      @media (min-width: $bp-sm) {
+        grid-column: 7/13;
+        grid-row: 1;
+      }
     }
   }
 }
