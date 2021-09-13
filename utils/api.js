@@ -6,10 +6,10 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default async function getPageData(pageSlug) {
+export default async function getPageData(pageSlug, contentType = 'page') {
   try {
     const spaceUrl = `${BASE_URL}/${process.env.CONTENTFUL_SPACE}/entries`;
-    const query = `?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}&content_type=page`;
+    const query = `?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}&content_type=${contentType}`;
     const pageFilter = `&fields.slug=${pageSlug}`;
 
     const response = await fetch(`${spaceUrl}/${query}${pageFilter}`);

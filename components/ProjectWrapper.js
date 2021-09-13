@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ALL_PROJECTS_CATEGORY_FILTER } from '../utils/constants';
 import CategoryLink from './CategoryLink';
 
 export default function ProjectWrapper({
@@ -24,7 +25,11 @@ export default function ProjectWrapper({
             >
               <CategoryLink
                 Component="a"
-                highlight={link === currCategory}
+                highlight={
+                  link === currCategory
+                  || (!currCategory
+                  && link === ALL_PROJECTS_CATEGORY_FILTER)
+                }
               >
                 {label}
               </CategoryLink>
