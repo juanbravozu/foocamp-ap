@@ -8,3 +8,4 @@ export const ALLIES_SECTION = 'alliesHomeSection';
 export const CONTACT_LABEL = 'Contáctanos';
 export const HERO_SECTION = 'hero';
 export const BASE_URL = 'https://cdn.contentful.com/spaces';
+export const ALL_PROJECTS_CATEGORY_FILTER = 'todos-los-proyectos';

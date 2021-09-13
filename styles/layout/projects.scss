@@ -1,4 +1,16 @@
 .project {
   margin: 96px auto;
   margin-bottom: 160px;
+
+  &--empty {
+    @include heading-2();
+    $min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: $min-height;
+    color: $ayp-grey-30;
+    font-family: $main-font;
+  }
 }
