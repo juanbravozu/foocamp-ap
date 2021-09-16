@@ -23,7 +23,7 @@ export default function Project({
         data={{
           title: projectTitle,
           content: projectBrief,
-          link: slug,
+          link: `proyectos/detalle/${slug}`,
           label: 'Más información',
           url,
           imgTitle,

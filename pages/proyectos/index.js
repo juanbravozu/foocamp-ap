@@ -4,6 +4,7 @@ import getPageData from '../../utils/api';
 import ProjectWrapper from '../../components/ProjectWrapper';
 import Projects from '../../components/Projects';
 import { ALL_PROJECTS_CATEGORY_FILTER, PROJECTS, MASTERPAGE } from '../../utils/constants';
+import Hero from '../../components/Hero';
 
 export const getServerSideProps = async () => {
   try {
@@ -39,9 +40,10 @@ function getCategoryProjects(projects, category) {
 export default function ProjectsPage({ components }) {
   const { query } = useRouter();
   const { categoryId } = query;
-  const [, , { fields: categories },
+  const [, { fields: hero }, { fields: categories },
     { fields: { project: projects } }] = components;
   const [projectsToDisplay, setProjectsToDisplay] = useState(projects);
+  const heroBaseUrl = '/proyectos/';
 
   useEffect(() => {
     setProjectsToDisplay(getCategoryProjects(projects, categoryId));
@@ -49,7 +51,12 @@ export default function ProjectsPage({ components }) {
 
   return (
     <div className="projects-page">
-      <div><h1>HERO</h1></div>
+      <Hero
+        fields={hero}
+        baseUrl={heroBaseUrl}
+        linksToBlank={false}
+        hideLine
+      />
       <ProjectWrapper
         currCategory={categoryId}
         categories={categories}
