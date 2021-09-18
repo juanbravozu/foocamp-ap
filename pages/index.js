@@ -1,15 +1,17 @@
 import getPageData from '../utils/api';
-import { HOME } from '../utils/constants';
+import { HOME, MASTERPAGE } from '../utils/constants';
 import Home from '../components/Home';
 
 export const getServerSideProps = async () => {
   try {
     const pageData = await getPageData(HOME);
+    const masterPageProps = await getPageData('', MASTERPAGE);
 
     return {
       props: {
         data: pageData,
         components: pageData.fields.components,
+        masterPageProps: masterPageProps.fields,
       },
     };
   } catch (e) {

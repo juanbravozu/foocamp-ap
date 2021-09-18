@@ -1,9 +1,10 @@
 import '../styles/ayp.scss';
 import Layout from '../components/Layout';
 
-function MyApp({ Component, pageProps }) {
+function MyApp(props) {
+  const { Component, pageProps, pageProps: { masterPageProps } } = props;
   return (
-    <Layout>
+    <Layout masterPageProps={masterPageProps}>
       <Component {...pageProps} />
     </Layout>
   );

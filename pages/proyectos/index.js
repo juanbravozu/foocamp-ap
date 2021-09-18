@@ -3,17 +3,19 @@ import { useEffect, useState } from 'react';
 import getPageData from '../../utils/api';
 import ProjectWrapper from '../../components/ProjectWrapper';
 import Projects from '../../components/Projects';
-import JoinUs from '../../components/JoinUs';
-import { ALL_PROJECTS_CATEGORY_FILTER } from '../../utils/constants';
+import { ALL_PROJECTS_CATEGORY_FILTER, PROJECTS, MASTERPAGE } from '../../utils/constants';
 
 export const getServerSideProps = async () => {
   try {
-    const pageData = await getPageData('proyectos');
+    const pageData = await getPageData(PROJECTS);
+    const masterPageProps = await getPageData('', MASTERPAGE);
 
     return {
       props: {
         data: pageData,
         components: pageData.fields.components,
+        masterPageProps: masterPageProps.fields,
+
       },
     };
   } catch (e) {
@@ -38,7 +40,7 @@ export default function ProjectsPage({ components }) {
   const { query } = useRouter();
   const { categoryId } = query;
   const [, , { fields: categories },
-    { fields: { project: projects } }, { fields: joinUs }] = components;
+    { fields: { project: projects } }] = components;
   const [projectsToDisplay, setProjectsToDisplay] = useState(projects);
 
   useEffect(() => {
@@ -54,7 +56,6 @@ export default function ProjectsPage({ components }) {
       >
         <Projects projectsList={projectsToDisplay} />
       </ProjectWrapper>
-      <JoinUs fields={joinUs} />
     </div>
   );
 }

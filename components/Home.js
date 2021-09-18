@@ -1,14 +1,8 @@
 import React from 'react';
-import dictionary from '../utils/componentsDictionary';
+import ComponentListRenderer from './ComponentListRenderer';
 
 export default function Home({ components }) {
   return (
-    <>
-      {components.map(({ fields, sys: { id, contentType: { sys: { id: sectionType } } } }) => {
-        const Component = dictionary[sectionType];
-        if (!Component) return null;
-        return <Component key={id} fields={fields} />;
-      })}
-    </>
+    <ComponentListRenderer components={components} />
   );
 }

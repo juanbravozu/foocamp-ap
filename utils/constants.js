@@ -1,6 +1,8 @@
 export const NAVBAR = 'navbar';
 export const FOOTER = 'footer';
 export const HOME = 'inicio';
+export const MASTERPAGE = 'masterPage';
+export const PROJECTS = 'proyectos';
 export const JOINUS_SECTION = 'joinUsSection';
 export const PROJECTS_SECTION = 'projectsSection';
 export const METRICS_SECTION = 'impactMetricsHomeSection';
