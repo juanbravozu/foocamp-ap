@@ -5,6 +5,7 @@ export const MASTERPAGE = 'masterPage';
 export const PROJECTS = 'proyectos';
 export const VOLUNTEERS = 'voluntarios';
 export const CONTACT = 'contacto';
+export const SUPPORT_US = 'apoyanos';
 export const JOINUS_SECTION = 'joinUsSection';
 export const PROJECTS_SECTION = 'projectsSection';
 export const METRICS_SECTION = 'impactMetricsHomeSection';
