@@ -1,0 +1,31 @@
+.testimonials {
+  @include container();
+
+  margin-bottom: 100px;
+
+  @media (min-width: $bp-sm) {
+    margin-bottom: 150px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    @include heading-1();
+
+    color: $ayp-blue;
+    margin-bottom: 55px;
+    max-width: 25rem;
+  }
+
+  &__column {
+    @media (min-width: $bp-sm) {
+      position: relative;
+      left: -25px;
+      width: 50%;
+      padding-left: 25px;
+    }
+  }
+}
