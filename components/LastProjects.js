@@ -29,7 +29,7 @@ export default function LastProjects({ fields }) {
           { title }
         </h2>
         <div className="last-projects__categories">
-          { categories.map(({
+          { categories?.map(({
             sys: { id },
             fields: { title: categoryTitle, icon },
           }) => (
@@ -38,14 +38,13 @@ export default function LastProjects({ fields }) {
               url="#"
               text={categoryTitle}
               icon={icon}
-              variation="none"
+              variation={['none']}
             />
           )) }
         </div>
       </div>
       <BigImageLayout
-        contentType="rich"
-        variation="no-title"
+        variation={['no-title']}
         data={{
           title,
           projectTitle,

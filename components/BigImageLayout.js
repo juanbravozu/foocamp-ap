@@ -1,15 +1,33 @@
+import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
 import { getVariation } from '../utils/global-functions';
+import EmbeddedAssetImage from './EmbeddedAssetImage';
 
-export default function BigImageLayout({ contentType, data, variation }) {
-  function getContent(innerContent, innerContentType) {
-    if (innerContentType === 'rich') {
-      return documentToReactComponents(innerContent);
-    } if (innerContentType === 'simple') {
-      return <p>{ innerContent }</p>;
+export default function BigImageLayout({ data, variation }) {
+  function generateElement(type, content) {
+    return type === 'paragraph' && <p>{ content }</p>;
+  }
+
+  /* eslint-disable react/destructuring-assignment */
+  const options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { file: { url } } = node.data.target.fields;
+        return <EmbeddedAssetImage url={url} />;
+      },
+    },
+  };
+
+  function getContent(innerContent) {
+    switch (typeof innerContent) {
+      case 'string':
+        return generateElement('paragraph', innerContent);
+      case 'object':
+        return documentToReactComponents(innerContent, options);
+      default:
+        return '';
     }
-    return '';
   }
 
   const layoutData = {
@@ -33,7 +51,7 @@ export default function BigImageLayout({ contentType, data, variation }) {
       <div className="big-image-layout__content">
         { layoutData.title && <h2 className="big-image-layout__title">{ layoutData.title }</h2> }
         { layoutData.content
-          && getContent(layoutData.content, contentType) }
+          && getContent(layoutData.content) }
         { layoutData.cta.url
           && (
             <Link href={`/${layoutData.cta.url}`}>

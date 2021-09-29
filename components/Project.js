@@ -19,7 +19,6 @@ export default function Project({
   return (
     <article className="project">
       <BigImageLayout
-        contentType="simple"
         data={{
           title: projectTitle,
           content: projectBrief,

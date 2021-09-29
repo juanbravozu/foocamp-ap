@@ -46,8 +46,26 @@
   flex-direction: column;
 }
 
+@mixin on-context-spacers {
+  margin: $on-context-margin-mobile auto ($on-context-margin-mobile * 2);
+
+  @media (min-width: $bp-md) {
+    margin: $on-context-margin-desktop auto ($on-context-margin-desktop * 2);
+  }
+}
+
 @mixin overlap-down {
   margin-bottom: -80px;
+}
+
+@mixin before-overlap-up {
+  @media (min-width: $bp-sm) {
+    margin-bottom: 100px;
+  }
+
+  @media (min-width: $bp-md) {
+    margin-bottom: $on-context-margin-desktop * 2;
+  }
 }
 
 @mixin overlap-up {
@@ -97,6 +115,33 @@
   &:hover {
     color: $ayp-blue;
     transition: 0.2s ease background, border, color;
+  }
+}
+
+@mixin reset-list {
+  li {
+    list-style: none;
+    margin: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@mixin reverse() {
+  .big-image-layout__image {
+    @media (min-width: $bp-sm) {
+      grid-column: 1 / 6;
+      grid-row: 1;
+    }
+  }
+
+  .big-image-layout__content {
+    @media (min-width: $bp-sm) {
+      grid-column: 7/13;
+      grid-row: 1;
+    }
   }
 }
 

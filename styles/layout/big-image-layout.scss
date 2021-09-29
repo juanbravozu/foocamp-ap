@@ -11,7 +11,7 @@
 
     color: $ayp-blue;
     margin-bottom: 30px;
-    max-width: 330px;
+    max-width: 420px;
   }
 
   &__button {
@@ -149,6 +149,20 @@
     }
   }
 
+  &--on-context {
+    @include on-context-spacers();
+
+    flex-direction: column-reverse;
+
+    .big-image-layout__content {
+      margin-bottom: 0;
+    }
+
+    .big-image-layout__image {
+      margin-bottom: $on-context-margin-mobile;
+    }
+  }
+
   &--project {
     flex-direction: column-reverse;
 
@@ -185,19 +199,7 @@
   }
 
   &--reverse {
-    .big-image-layout__image {
-      @media (min-width: $bp-sm) {
-        grid-column: 1 / 6;
-        grid-row: 1;
-      }
-    }
-
-    .big-image-layout__content {
-      @media (min-width: $bp-sm) {
-        grid-column: 7/13;
-        grid-row: 1;
-      }
-    }
+    @include reverse();
   }
 
   &--vertical-margin {
