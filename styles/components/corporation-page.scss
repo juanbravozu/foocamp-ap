@@ -1,0 +1,28 @@
+.corporation {
+  & > section:nth-child(odd) {
+    @include reverse();
+  }
+
+  .big-image-layout {
+    ol {
+      @include reset-list();
+
+      > li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+
+        img {
+          width: 45px;
+          height: 45px;
+          margin-right: 20px;
+        }
+
+        p {
+          text-transform: capitalize;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
