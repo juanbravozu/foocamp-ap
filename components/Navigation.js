@@ -6,6 +6,9 @@ export default function Navigation({ fields }) {
   function handleToggleMenu() {
     setOpenMenu(!openMenu);
   }
+  function handleCloseMenu() {
+    setOpenMenu(false);
+  }
   const { logo: { fields: logo }, navItems: navHeadre } = fields;
   const navigationType = (link) => (link === 'apoyanos' ? 'button-main button-header' : 'navigation__item');
   return (
@@ -29,7 +32,7 @@ export default function Navigation({ fields }) {
             {navHeadre.map((link) => (
               <li key={link.sys.id}>
                 <Link passHref href={`/${link.fields.link}`}>
-                  <a href="/" className={navigationType(link.fields.link)}>
+                  <a href="/" className={navigationType(link.fields.link)} onClick={handleCloseMenu}>
                     {link.fields.label}
                   </a>
                 </Link>
