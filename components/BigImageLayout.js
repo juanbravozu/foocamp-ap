@@ -34,7 +34,7 @@ export default function BigImageLayout({ contentType, data, variation }) {
         { layoutData.title && <h2 className="big-image-layout__title">{ layoutData.title }</h2> }
         { layoutData.content
           && getContent(layoutData.content, contentType) }
-        { layoutData.cta
+        { layoutData.cta.url
           && (
             <Link href={`/${layoutData.cta.url}`}>
               <span className="big-image-layout__button">
@@ -48,7 +48,7 @@ export default function BigImageLayout({ contentType, data, variation }) {
         role="presentation"
         aria-hidden="true"
       >
-        { layoutData.image
+        { layoutData.image.url
           && (
           <img
             src={`https://${layoutData.image.url}`}

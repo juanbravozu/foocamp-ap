@@ -108,6 +108,24 @@
     }
   }
 
+  &--image-first {
+    flex-direction: column-reverse;
+
+    .big-image-layout__content {
+      margin-bottom: 0;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .big-image-layout__image {
+      img {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
   &--reverse {
     .big-image-layout__image {
       @media (min-width: $bp-sm) {

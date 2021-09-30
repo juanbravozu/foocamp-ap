@@ -1,0 +1,7 @@
+.vertical-space {
+  margin: 96px auto;
+
+  @media (min-width: $bp-md) {
+    margin-bottom: 160px;
+  }
+}
