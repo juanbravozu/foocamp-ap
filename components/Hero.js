@@ -7,7 +7,16 @@ export default function Hero({
   hideLine = false,
 }) {
   const {
-    title: { fields: { title: sectionTitle } },
+    title: {
+      fields: {
+        title: sectionTitle,
+        icon: {
+          fields: {
+            file: { url: iconUrl = null } = {},
+          } = {},
+        } = {},
+      },
+    },
     description,
     heroBackground: { fields: { file: { url: img } } },
     cta: {
@@ -25,7 +34,11 @@ export default function Hero({
       <div className="hero-shape" />
 
       <div className="hero-content">
-        <h1 className="hero-title">{sectionTitle}</h1>
+        <div className="hero-title-wrapper">
+          {iconUrl
+            && <img src={iconUrl} alt="" className="hero-icon" />}
+          <h1 className="hero-title">{sectionTitle}</h1>
+        </div>
         <p className="hero-description">{description}</p>
         {!!ctaLink && (
         <Link href={`/${ctaLink}`}>

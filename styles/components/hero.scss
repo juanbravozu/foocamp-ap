@@ -50,6 +50,19 @@
     }
   }
 
+  &-title-wrapper {
+    display: flex;
+  }
+
+  &-icon {
+    width: 90px;
+    object-fit: contain;
+
+    @media (min-width: $bp-sm) {
+      width: 120px;
+    }
+  }
+
   &-content {
     width: 100%;
     padding: 72px 24px;

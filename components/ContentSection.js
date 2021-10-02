@@ -1,7 +1,11 @@
 import React from 'react';
 import BigImageLayout from './BigImageLayout';
 
-export default function ContentSection({ fields }) {
+export default function ContentSection({
+  fields,
+  className = '',
+  variation = ['on-context'],
+}) {
   const {
     title,
     projectTitle,
@@ -18,9 +22,9 @@ export default function ContentSection({ fields }) {
   } = fields;
 
   return (
-    <section>
+    <section className={className}>
       <BigImageLayout
-        variation={['on-context']}
+        variation={variation}
         data={{
           title,
           projectTitle,

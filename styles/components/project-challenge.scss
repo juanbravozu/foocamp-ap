@@ -1,0 +1,7 @@
+.project-challenge {
+  @include overlap-down();
+
+  max-width: $inner-container;
+  margin-left: auto;
+  margin-right: auto;
+}
