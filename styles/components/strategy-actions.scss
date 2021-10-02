@@ -1,0 +1,7 @@
+.strategy-actions {
+  margin: 50px auto;
+
+  @media (min-width: $bp-sm) {
+    margin: 100px auto 200px auto;
+  }
+}

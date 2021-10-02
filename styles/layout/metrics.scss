@@ -6,7 +6,7 @@
   background-color: $ayp-blue;
 
   @media (min-width: $bp-md) {
-    $max-item-width: 350px;
+    $max-item-width: 280px;
   }
 
   &-wrapper {
@@ -19,13 +19,13 @@
 
     @media (min-width: $bp-md) {
       display: flex;
-      gap: 32px;
+      justify-content: flex-end;
+      gap: 25px;
     }
   }
 
   &-item {
     max-width: $max-item-width;
-    margin: 0 auto;
     margin-top: 52px;
     flex: 1;
   }
@@ -39,6 +39,8 @@
 
   &-title {
     @include heading-1();
+
+    max-width: 240px;
   }
 
   &-subtitle {

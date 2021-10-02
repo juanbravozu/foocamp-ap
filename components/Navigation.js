@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Navigation({ fields }) {
   const [openMenu, setOpenMenu] = useState(false);
@@ -9,8 +10,11 @@ export default function Navigation({ fields }) {
   function handleCloseMenu() {
     setOpenMenu(false);
   }
-  const { logo: { fields: logo }, navItems: navHeadre } = fields;
+  const { pathname } = useRouter();
+  const currentPage = pathname.split('/')[1];
+  const { logo: { fields: logo }, navItems: navHeader } = fields;
   const navigationType = (link) => (link === 'apoyanos' ? 'button-main button-header' : 'navigation__item');
+  const activeClass = (link) => (link.trim() === currentPage ? 'active' : '');
   return (
     <header className="header">
       <nav className={`navigation container ${openMenu && 'active'}`}>
@@ -29,11 +33,21 @@ export default function Navigation({ fields }) {
         </button>
         <div className="navigation__list">
           <ul>
-            {navHeadre.map((link) => (
-              <li key={link.sys.id}>
-                <Link passHref href={`/${link.fields.link}`}>
-                  <a href="/" className={navigationType(link.fields.link)} onClick={handleCloseMenu}>
-                    {link.fields.label}
+            {navHeader.map(({
+              fields: {
+                link,
+                label,
+              },
+              sys: { id },
+            }) => (
+              <li key={id} className={activeClass(link)}>
+                <Link passHref href={`/${link}`}>
+                  <a
+                    href="/"
+                    className={navigationType(link)}
+                    onClick={handleCloseMenu}
+                  >
+                    {label}
                   </a>
                 </Link>
               </li>
