@@ -26,7 +26,7 @@ export default function SupportUsPage({ components }) {
     { fields: benefist },
   ] = components;
   return (
-    <>
+    <div className="contact">
       <Hero
         fields={hero}
       />
@@ -38,6 +38,6 @@ export default function SupportUsPage({ components }) {
           }}
         />
       </section>
-    </>
+    </div>
   );
 }
