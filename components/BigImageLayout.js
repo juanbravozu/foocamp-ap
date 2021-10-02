@@ -2,34 +2,34 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Link from 'next/link';
 import { getVariation } from '../utils/global-functions';
-import EmbeddedAssetImage from './EmbeddedAssetImage';
+
+/* eslint-disable react/destructuring-assignment */
+const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      const { file: { url } } = node.data.target.fields;
+      return (
+        <img
+          src={`https://${url}`}
+          alt=""
+        />
+      );
+    },
+  },
+};
+
+function getContent(innerContent) {
+  switch (typeof innerContent) {
+    case 'string':
+      return <p>{ innerContent }</p>;
+    case 'object':
+      return documentToReactComponents(innerContent, options);
+    default:
+      return '';
+  }
+}
 
 export default function BigImageLayout({ data, variation }) {
-  function generateElement(type, content) {
-    return type === 'paragraph' && <p>{ content }</p>;
-  }
-
-  /* eslint-disable react/destructuring-assignment */
-  const options = {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        const { file: { url } } = node.data.target.fields;
-        return <EmbeddedAssetImage url={url} />;
-      },
-    },
-  };
-
-  function getContent(innerContent) {
-    switch (typeof innerContent) {
-      case 'string':
-        return generateElement('paragraph', innerContent);
-      case 'object':
-        return documentToReactComponents(innerContent, options);
-      default:
-        return '';
-    }
-  }
-
   const layoutData = {
     title: data?.title,
     content:

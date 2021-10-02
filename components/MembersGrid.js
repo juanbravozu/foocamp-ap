@@ -1,11 +1,16 @@
 export default function MembersGrid({ fields }) {
+  const {
+    title,
+    corporationMembersSet,
+  } = fields;
+
   return (
     <section className="members-grid">
       <h2 className="members-grid__title">
-        { fields.title }
+        { title }
       </h2>
       <ul className="members-grid__container">
-        { fields.corporationMembersSet?.map(({
+        { corporationMembersSet?.map(({
           sys: { id },
           fields: {
             memberName,
@@ -26,14 +31,10 @@ export default function MembersGrid({ fields }) {
               />
               <div>
                 <p className="member__name">
-                  {' '}
-                  { memberName }
-                  {' '}
+                  {memberName}
                 </p>
                 <p className="member__copy">
-                  {' '}
-                  { memberPosition }
-                  {' '}
+                  {memberPosition}
                 </p>
               </div>
             </article>
