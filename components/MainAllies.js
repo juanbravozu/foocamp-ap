@@ -1,7 +1,16 @@
 import Link from 'next/link';
+import { useState } from 'react';
+import { ALLIES_TYPE, PAGINATOR_ARROW_TYPE } from '../utils/constants';
+import Paginator from './Paginator';
 
 export default function MainAllies({ fields }) {
-  const { title, allies } = fields;
+  const { title } = fields;
+  const [allies, setAllies] = useState([]);
+  const alliesPerRequest = 18;
+
+  const handlePageChange = (items) => {
+    setAllies([...allies, ...items]);
+  };
   return (
     <section className="mainAllies">
       <div className="container">
@@ -11,7 +20,7 @@ export default function MainAllies({ fields }) {
           </h3>
         </div>
         <div className="grid">
-          {allies.slice(0, 18).map((ally) => (
+          {allies.map((ally) => (
             <div key={ally.sys.id} className="grid__card">
               <Link passHref href="/">
                 <a href="/" target="_blank" rel="noreferrer">
@@ -24,13 +33,12 @@ export default function MainAllies({ fields }) {
             </div>
           ))}
         </div>
-        <div className="moreAllies">
-          <Link passHref href="/">
-            <a href="/">
-              <img src="/icons/icon-arrowDown.svg" alt="icon-arrowDown" />
-            </a>
-          </Link>
-        </div>
+        <Paginator
+          variation={PAGINATOR_ARROW_TYPE}
+          contentType={ALLIES_TYPE}
+          itemsPerRequest={alliesPerRequest}
+          onChange={handlePageChange}
+        />
       </div>
     </section>
   );

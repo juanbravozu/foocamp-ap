@@ -24,15 +24,15 @@ export const getServerSideProps = async (context) => {
 };
 
 export default function ProjectDetail({ components }) {
-  const [{ fields: hero }, { fields: { category: categories } }, { fields: currCategory },
-    { fields: challenge }, { fields: metrics }, { fields: strategy }] = components.detailComponents;
+  const [{ fields: hero }, { fields: { category: categories } }, { fields: challenge },
+    { fields: metrics }, { fields: strategy }] = components.detailComponents;
   return (
     <div>
       <Hero fields={hero} />
       <ProjectChallenge
         fields={{
           categories,
-          currCategory: currCategory.link,
+          currCategory: components.projectCategory,
           ...challenge,
         }}
       />

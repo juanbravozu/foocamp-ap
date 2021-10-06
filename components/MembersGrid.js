@@ -1,16 +1,24 @@
+import { useState } from 'react';
+import { MEMBER_TYPE, PAGINATOR_ARROW_TYPE } from '../utils/constants';
+import Paginator from './Paginator';
+
 export default function MembersGrid({ fields }) {
   const {
     title,
-    corporationMembersSet,
   } = fields;
+  const membersPerRequest = 12;
+  const [members, setMembers] = useState([]);
 
+  const handleMembersChange = (items) => {
+    setMembers([...members, ...items]);
+  };
   return (
     <section className="members-grid">
       <h2 className="members-grid__title">
         { title }
       </h2>
       <ul className="members-grid__container">
-        { corporationMembersSet?.map(({
+        { members?.map(({
           sys: { id },
           fields: {
             memberName,
@@ -41,6 +49,12 @@ export default function MembersGrid({ fields }) {
           </li>
         )) }
       </ul>
+      <Paginator
+        variation={PAGINATOR_ARROW_TYPE}
+        contentType={MEMBER_TYPE}
+        onChange={handleMembersChange}
+        itemsPerRequest={membersPerRequest}
+      />
     </section>
   );
 }

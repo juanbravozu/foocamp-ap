@@ -16,6 +16,12 @@
   line-height: 18px;
 }
 
+@mixin appear-animated() {
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
 @mixin normalize-interactable() {
   border: none;
   color: $ayp-grey-70;
@@ -151,4 +157,16 @@
 
 .container {
   @include container();
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
