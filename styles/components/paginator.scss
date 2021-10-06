@@ -50,11 +50,33 @@
       }
     }
 
-    .active,
+    &--active,
     &:hover,
     &:active {
       border-color: $ayp-blue;
       color: $ayp-blue;
+    }
+  }
+
+  &--arrow {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background: none;
+
+    @media (min-width: $bp-sm) and (max-width: $bp-md) {
+      margin-bottom: 80px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
     }
   }
 }

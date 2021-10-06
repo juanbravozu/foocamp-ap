@@ -33,12 +33,13 @@
     }
 
     &__card {
+      @include appear-animated();
+
       border: 1px solid $ayp-grey-30;
       width: 100%;
       height: 116px;
 
       @media (min-width: $bp-md) {
-        width: 158px;
         height: 124px;
       }
 
@@ -51,9 +52,5 @@
         object-fit: contain;
       }
     }
-  }
-
-  .moreAllies {
-    text-align: center;
   }
 }
