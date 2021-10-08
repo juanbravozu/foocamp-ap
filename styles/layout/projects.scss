@@ -1,6 +1,9 @@
 .project {
-  margin: 96px auto;
-  margin-bottom: 160px;
+  margin: 95px auto;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   &--empty {
     @include heading-2();

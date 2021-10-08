@@ -1,0 +1,60 @@
+.paginator {
+  @include container();
+  @include before-overlap-up();
+
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px;
+  margin-bottom: 100px;
+
+  @media (min-width: $bp-md) {
+    align-items: center;
+  }
+
+  @media (min-width: $bp-md) {
+    margin-top: 65px;
+  }
+
+  &__button {
+    @include button-primary();
+
+    border-radius: 6px;
+  }
+
+  &__page {
+    @include button-generic();
+    @include normalize-interactable();
+
+    background-color: $ayp-grey-0;
+    border: 1px solid $ayp-grey-30;
+    border-radius: 6px;
+    color: $ayp-grey-70;
+    font-size: 18px;
+    margin: 0 7px;
+    min-width: 47px;
+    padding: 15px 8px;
+    margin-bottom: 15px;
+
+    @media (min-width: $bp-md) {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-right: 15px;
+    }
+
+    &:first-child {
+      @media (min-width: $bp-md) {
+        margin-left: 15px;
+      }
+    }
+
+    .active,
+    &:hover,
+    &:active {
+      border-color: $ayp-blue;
+      color: $ayp-blue;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ALL_PROJECTS_CATEGORY_FILTER } from '../utils/constants';
 import CategoryLink from './CategoryLink';
+import Paginator from './Paginator';
 
 export default function ProjectWrapper({
   children,
@@ -38,6 +39,7 @@ export default function ProjectWrapper({
         </ul>
       </div>
       {children}
+      <Paginator />
     </>
   );
 }
