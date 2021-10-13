@@ -38,11 +38,7 @@ export default function Paginator({
         variation === PAGINATOR_ARROW_TYPE
         && items.total <= (page * itemsPerRequest) + items.items.length
       ) setShowMoreBtn(false);
-      if (variation === PAGINATOR_NUMBERS_TYPE) {
-        setTotalPages(
-          Math.ceil(items.total / itemsPerRequest),
-        );
-      }
+      setTotalPages(Math.ceil(items.total / itemsPerRequest));
       onChange(items.items);
     } catch (e) {
       console.error(e);
