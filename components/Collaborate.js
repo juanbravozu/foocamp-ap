@@ -17,7 +17,7 @@ export default function Collaborate({
   return (
     <section>
       <BigImageLayout
-        variation={['reverse', 'vertical-margin']}
+        variation={['reverse', 'on-context']}
         contentType="rich"
         data={{
           title,

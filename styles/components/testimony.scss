@@ -23,6 +23,10 @@
     }
   }
 
+  &__info {
+    line-height: 32px;
+  }
+
   &__info-mobile {
     margin-left: 25px;
 
@@ -55,12 +59,14 @@
   &__title {
     @include hero-body();
 
+    line-height: 20px;
     text-transform: capitalize;
   }
 
   &__subtitle {
     @include eyebrow();
 
+    font-weight: 400;
     margin-bottom: 15px;
   }
 }

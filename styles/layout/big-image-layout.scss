@@ -85,7 +85,11 @@
     h2 {
       @include heading-1();
 
-      margin-bottom: 50px;
+      margin-bottom: 30px;
+
+      @media (min-width: $bp-md) {
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -200,9 +204,5 @@
 
   &--reverse {
     @include reverse();
-  }
-
-  &--vertical-margin {
-    margin: 156px auto;
   }
 }

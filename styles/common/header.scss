@@ -63,6 +63,7 @@
           margin: 0;
           line-height: initial;
           border-bottom: 3px solid transparent;
+          padding-bottom: 5px;
 
           &::before {
             display: none;
@@ -97,6 +98,7 @@
 
     .button-header {
       margin-left: 41px;
+      text-align: center;
     }
 
     &__icon {
@@ -198,7 +200,7 @@
     &.active {
       height: 100%;
       position: fixed;
-      width: 100%;
+      width: 85%;
 
       .navigation__list {
         display: block;

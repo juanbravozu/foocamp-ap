@@ -31,6 +31,10 @@
       grid-auto-rows: auto;
     }
 
+    @media (min-width: $bp-lg) {
+      grid-gap: 50px;
+    }
+
     & > * {
       grid-column-end: span 3;
     }

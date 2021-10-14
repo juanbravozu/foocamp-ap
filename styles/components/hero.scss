@@ -117,10 +117,13 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 64px;
+    bottom: 35px;
+  }
+}
 
-    @media (min-width: $bp-sm) {
-      display: none;
-    }
+.home .hero-media-wrapper {
+  a > img {
+    width: 24px;
+    height: 24px;
   }
 }

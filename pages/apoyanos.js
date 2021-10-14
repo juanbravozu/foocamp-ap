@@ -30,14 +30,17 @@ export default function SupportUsPage({ components }) {
       <Hero
         fields={hero}
       />
-      <BigImageLayout
-        contentType="rich"
-        data={{
-          url: howTo.sectionImage.fields.file.url,
-          imgTitle: howTo.sectionImage.fields.title,
-          ...howTo,
-        }}
-      />
+      <section>
+        <BigImageLayout
+          contentType="rich"
+          variation={['on-context']}
+          data={{
+            url: howTo.sectionImage.fields.file.url,
+            imgTitle: howTo.sectionImage.fields.title,
+            ...howTo,
+          }}
+        />
+      </section>
       <Collaborate
         fields={collaborate}
       />

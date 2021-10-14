@@ -1,8 +1,20 @@
 .project {
-  margin: 95px auto;
+  margin: 50px auto;
+
+  @media (min-width: $bp-md) {
+    margin: 95px auto;
+  }
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &:first-child {
+    margin-top: 20px;
+
+    @media (min-width: $bp-md) {
+      margin-top: 70px;
+    }
   }
 
   &--empty {
