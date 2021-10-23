@@ -6,7 +6,7 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default async function getPageData(pageSlug, contentType = 'page') {
+export default async function getPageData(pageSlug, contentType = 'page', include = 3) {
   try {
     const spaceUrl = `${BASE_URL}/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE}/entries`;
     const query = `?access_token=${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}&content_type=${contentType}`;
@@ -15,7 +15,7 @@ export default async function getPageData(pageSlug, contentType = 'page') {
     const response = await fetch(`${spaceUrl}/${query}${pageFilter}`);
     const { items } = await response.json();
 
-    const pageData = await client.getEntry(items[0].sys.id, { include: 3 });
+    const pageData = await client.getEntry(items[0].sys.id, { include });
 
     return pageData;
   } catch (e) {

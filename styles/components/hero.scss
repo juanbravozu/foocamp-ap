@@ -56,11 +56,8 @@
 
   &-icon {
     width: 90px;
+    margin-right: 25px;
     object-fit: contain;
-
-    @media (min-width: $bp-sm) {
-      width: 120px;
-    }
   }
 
   &-content {

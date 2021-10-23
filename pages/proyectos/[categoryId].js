@@ -3,7 +3,7 @@ import { MASTERPAGE, PROJECTS } from '../../utils/constants';
 
 export const getServerSideProps = async () => {
   try {
-    const pageData = await getPageData(PROJECTS);
+    const pageData = await getPageData(PROJECTS, 'page', 4);
     const masterPageProps = await getPageData('', MASTERPAGE);
 
     return {
