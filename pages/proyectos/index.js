@@ -25,13 +25,17 @@ export const getServerSideProps = async () => {
 export default function ProjectsPage({ components }) {
   const { query } = useRouter();
   const { categoryId } = query;
-  const [, { fields: hero }, { fields: categories }] = components;
+  const [{ fields: hero }, { fields: categories }] = components;
   const heroBaseUrl = '/proyectos/';
+  const categoryHero = !!categoryId
+    && categories.category.filter(({
+      fields: { link },
+    }) => link === categoryId)[0].fields.categoryHero;
 
   return (
     <div className="projects-page">
       <Hero
-        fields={hero}
+        fields={categoryHero ? categoryHero.fields : hero}
         baseUrl={heroBaseUrl}
         linksToBlank={false}
         hideLine
