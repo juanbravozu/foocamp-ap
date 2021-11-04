@@ -60,7 +60,7 @@
         }
 
         li {
-          margin: 0;
+          margin: 0 10px;
           line-height: initial;
           border-bottom: 3px solid transparent;
           padding-bottom: 5px;
@@ -70,7 +70,7 @@
           }
 
           .navigation__item {
-            font-size: 16px;
+            font-size: 14px;
             font-family: $main-font;
             font-weight: 500;
             text-transform: uppercase;
@@ -97,8 +97,9 @@
     }
 
     .button-header {
-      margin-left: 41px;
+      margin-left: 30px;
       text-align: center;
+      font-weight: 700;
     }
 
     &__icon {

@@ -3,7 +3,7 @@
   padding: 44px 0;
 
   @media (min-width: $bp-md) {
-    padding: 92px 0 44px 0;
+    padding: 75px 0 115px 0;
   }
 
   .footer-nav {
@@ -87,7 +87,8 @@
           max-width: 100%;
           width: 100%;
           text-align: center;
-          margin-top: 31px;
+          margin-bottom: 25px;
+          margin-top: 25px;
           flex: 0 0 100%;
 
           @media (min-width: $bp-md) {
@@ -130,8 +131,6 @@
 
     &__social-media {
       flex: 0 0 100%;
-      margin-bottom: 45px;
-      margin-top: 24px;
 
       @media (min-width: $bp-md) {
         flex: 0 0 58.33%;

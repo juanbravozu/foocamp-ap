@@ -50,7 +50,7 @@
       margin-top: 90px;
 
       @media (min-width: $bp-sm) {
-        margin-top: 200px;
+        margin-top: 115px;
       }
     }
 
@@ -181,6 +181,10 @@
           margin-bottom: 0;
         }
       }
+    }
+
+    .big-image-layout__content p {
+      max-width: initial;
     }
   }
 
