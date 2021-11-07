@@ -1,0 +1,20 @@
+.collaborate {
+  ol {
+    @include reset-list();
+
+    li {
+      align-items: center;
+      display: flex;
+      margin-bottom: 20px;
+
+      img {
+        margin-right: 24px;
+        flex-shrink: 0;
+        object-fit: scale-down;
+        width: 24px;
+        height: 24px;
+        object-position: center;
+      }
+    }
+  }
+}

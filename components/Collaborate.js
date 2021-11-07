@@ -15,7 +15,7 @@ export default function Collaborate({
   },
 }) {
   return (
-    <section>
+    <section className="collaborate">
       <BigImageLayout
         variation={['reverse', 'on-context']}
         contentType="rich"
